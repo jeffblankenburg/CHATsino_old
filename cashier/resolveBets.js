@@ -13,10 +13,14 @@ async function resolveBets(user, game, outcome) {
     let fields = {};
 
     if (outcome) {
-      fields.Outcome = outcome.symbol;
+      fields.Outcome = JSON.stringify(outcome);
       wagers[i].fields.Outcome = outcome;
+      fields.Payout = wagers[i].fields.Amount * outcome.odds;
       winnings += wagers[i].fields.Amount * outcome.odds;
-    } else winnings -= wagers[i].fields.Amount;
+    } else {
+      fields.Payout = -wagers[i].fields.Amount;
+      winnings -= wagers[i].fields.Amount;
+    }
 
     fields.Status = "Completed";
     wagers[i].fields.Status = "Completed";

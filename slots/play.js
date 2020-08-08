@@ -15,6 +15,8 @@ async function play(user, wager) {
     // console.log(`OUTCOME ${JSON.stringify(outcome)}`);
     const result = await cashier.resolveBets(user, game, outcome);
     user = result.user;
+
+    const isGameResolved = await cashier.completeGame(game);
     // if (outcome)
     //   action = await cashier.deposit(user, wager, outcome.odds, helper.SLOTS);
     // else action = await cashier.withdraw(user, wager, helper.SLOTS);

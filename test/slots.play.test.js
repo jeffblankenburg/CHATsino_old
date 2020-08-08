@@ -12,10 +12,10 @@ test("User ID should match on return", async () => {
   expect(result.user.RecordId).toBe(user.RecordId);
 });
 
-// test("Wager should match on return", async () => {
-//   const result = await slots.play(user, 10);
-//   expect(result.wager).toBe(10);
-// });
+test("Wager should match on return", async () => {
+  const result = await slots.play(user, 10);
+  expect(result.wager).toBe(10);
+});
 
 function resetUser() {
   return {

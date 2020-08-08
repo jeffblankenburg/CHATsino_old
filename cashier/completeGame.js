@@ -7,7 +7,7 @@ async function completeGame(game) {
   );
   return new Promise((resolve, reject) => {
     airtable("Game").update(
-      "recrCXXL7HGg99V1j",
+      game.fields.RecordId,
       {
         Status: "Completed",
       },
