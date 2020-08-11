@@ -26,6 +26,7 @@ async function play(user, wager) {
       wager: wager,
       result: spinResult,
       outcome: outcome,
+      status: "COMPLETED",
     };
     // if (outcome) return await win(user, wager, spinResult, outcome);
     // return await lose(user, wager, spinResult);

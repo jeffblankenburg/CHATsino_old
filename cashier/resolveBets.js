@@ -31,7 +31,6 @@ async function resolveBets(user, game, outcome) {
     };
     updateArray.push(wager);
   }
-  console.log(`WINNINGS ${JSON.stringify(winnings)}`);
   const updatedUser = await data.updateBalance(user, winnings);
   const areWagersResolved = await updateWagers(updateArray);
 
